@@ -9,7 +9,7 @@ RSpec.describe Session, type: :model do
     end
 
     it 'should automatically generate a new token' do
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       session = user.sessions.create
 
       expect(session.token).not_to be_nil

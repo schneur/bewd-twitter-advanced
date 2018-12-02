@@ -5,7 +5,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'POST /sessions' do
     it 'renders new session object' do
-      user = FactoryGirl.create(:user, username: 'asdasdasd', password: 'asdasdasd')
+      user = FactoryBot.create(:user, username: 'asdasdasd', password: 'asdasdasd')
 
       post :create, params: {
         user: {
@@ -22,7 +22,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'GET /authenticated' do
     it 'renders authenticated user object' do
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       session = user.sessions.create
       @request.cookie_jar.signed['twitter_session_token'] = session.token
 
@@ -37,7 +37,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'DELETE /sessions' do
     it 'renders success' do
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       session = user.sessions.create
       @request.cookie_jar.signed['twitter_session_token'] = session.token
 

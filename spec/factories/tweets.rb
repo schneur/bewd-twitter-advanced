@@ -1,5 +1,5 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :tweet do
-    message 'Test Message'
+    message {'Test Message'}
   end
 end

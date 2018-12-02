@@ -1,22 +1,3 @@
-# Twitter Project
+# Twitter Clone (Advanced with Mailer, Search, Photo Upload)
 
-After downloading the repository
-Install the gems
-
-```
-bundle
-```
-
-Create the database
-
-```
-rake db:create
-```
-
-Start server:
-
-```
-rails s
-```
-
-Visit localhost:3000 to see the homepage
+Visit [Altcademy Classroom](https://www.altcademy.com/classroom/) for more instructions.

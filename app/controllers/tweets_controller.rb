@@ -45,11 +45,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  def search
-    @tweets = Tweet.basic_search(message: params[:keyword])
-    render 'tweets/index'
-  end
-
   private
 
     def tweet_params
