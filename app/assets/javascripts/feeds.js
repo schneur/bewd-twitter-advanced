@@ -111,7 +111,7 @@ $(".feeds.index").ready(function(){
             <a class="tweet-screenName" href="#">@'+tweets[index]['username']+'</a> \
             <a class="delete-tweet" id="'+tweets[index]['id']+'" href="#">Delete</a>'
 
-          if (tweets[index]['image'] !== "/images/original/missing.png") {
+          if (tweets[index]['image'] !== undefined) {
             html += '<img src="' + tweets[index]['image'] + '" class="img img-responsive">'
           }
 
@@ -123,7 +123,7 @@ $(".feeds.index").ready(function(){
             <a class="tweet-username" href="#">'+tweets[index]['username']+'</a> \
             <a class="tweet-screenName" href="#">@'+tweets[index]['username']+'</a>'
 
-          if (tweets[index]['image'] !== "/images/original/missing.png") {
+          if (tweets[index]['image'] !== undefined) {
             html += '<img src="' + tweets[index]['image'] + '" class="img img-responsive">'
           }
 

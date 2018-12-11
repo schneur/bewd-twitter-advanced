@@ -18,8 +18,7 @@ RSpec.describe TweetsController, type: :controller do
       expect(response.body).to eq({
         tweet: {
           username: user.username,
-          message: 'Test Message',
-          image: '/images/original/missing.png'
+          message: 'Test Message'
         }
       }.to_json)
     end
@@ -54,13 +53,11 @@ RSpec.describe TweetsController, type: :controller do
           {
             id: Tweet.order(created_at: :desc)[0].id,
             username: user.username,
-            message: 'Test Message',
-            image: '/images/original/missing.png'
+            message: 'Test Message'
           }, {
             id: Tweet.order(created_at: :desc)[1].id,
             username: user.username,
-            message: 'Test Message',
-            image: '/images/original/missing.png'
+            message: 'Test Message'
           }
         ]
       }.to_json)
@@ -107,8 +104,7 @@ RSpec.describe TweetsController, type: :controller do
           {
             id: tweet_1.id,
             username: user_1.username,
-            message: 'Test Message',
-            image: '/images/original/missing.png'
+            message: 'Test Message'
           }
         ]
       }.to_json)

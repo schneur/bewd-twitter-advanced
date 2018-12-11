@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get  '/tweets/search/:keyword' => 'tweets#search'
 
   # Redirect all other paths to index page, which will be taken over by AngularJS
-  get '*path'    => 'homepage#index'
+  # get '*path'    => 'homepage#index'
 end

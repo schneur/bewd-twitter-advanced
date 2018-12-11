@@ -10,7 +10,10 @@
     </p>
     <p>
       <%= @tweet.message %>
-      <%= image_tag @tweet.image.url %>
+
+      <% if @tweet.image.attached? %>
+        <%= image_tag url_for(@tweet.image) %>
+      <% end %>
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
