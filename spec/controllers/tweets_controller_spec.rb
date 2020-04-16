@@ -21,6 +21,9 @@ RSpec.describe TweetsController, type: :controller do
           message: 'Test Message'
         }
       }.to_json)
+
+      expect(JSON.parse(response.body)['tweet']['message']).to eq('Test Message')
+      expect(JSON.parse(response.body)['tweet']['image']).to eq(nil)
     end
 
     it 'OK with image attachments' do
@@ -53,11 +56,13 @@ RSpec.describe TweetsController, type: :controller do
           {
             id: Tweet.order(created_at: :desc)[0].id,
             username: user.username,
-            message: 'Test Message'
+            message: 'Test Message',
+            image: nil
           }, {
             id: Tweet.order(created_at: :desc)[1].id,
             username: user.username,
-            message: 'Test Message'
+            message: 'Test Message',
+            image: nil
           }
         ]
       }.to_json)
@@ -104,10 +109,23 @@ RSpec.describe TweetsController, type: :controller do
           {
             id: tweet_1.id,
             username: user_1.username,
-            message: 'Test Message'
+            message: 'Test Message',
+            image: nil
           }
         ]
       }.to_json)
+    end
+
+    it 'renders tweets with images by username' do
+      user_1 = FactoryBot.create(:user, username: 'user_1', email: 'user_1@user.com')
+      user_2 = FactoryBot.create(:user, username: 'user_2', email: 'user_2@user.com')
+
+      tweet_1 = FactoryBot.create(:tweet, user: user_1, image: fixture_file_upload('files/test.png'))
+      tweet_2 = FactoryBot.create(:tweet, user: user_2, image: fixture_file_upload('files/test.png'))
+
+      get :index_by_user, params: { username: user_1.username }
+
+      expect(JSON.parse(response.body)['tweets'].first['image']).to include('test.png')
     end
   end
 end
