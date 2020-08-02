@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.13'
 
 gem 'textacular', '~> 5.2'
 
-gem 'aws-sdk-s3', '~> 1'
+gem 'aws-sdk-s3', '~> 1.75'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
