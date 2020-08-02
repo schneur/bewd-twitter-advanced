@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2'
+gem 'rails', '~> 6.0.3'
 # Use Puma as the app server
 gem 'puma', '~> 4.3.3'
 # Use SCSS for stylesheets
@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.13'
 
 gem 'textacular', '~> 5.2'
 
-gem 'aws-sdk', '~> 3.0'
+gem 'aws-sdk-s3', '~> 1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
