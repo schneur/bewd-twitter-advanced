@@ -32,8 +32,4 @@ RSpec.describe "Route definition", :type => :routing do
   it "of GET /users/:username/tweets" do
     expect(:get => "/users/:username/tweets").to route_to(:controller => "tweets", :action => "index_by_user", :username => ":username")
   end
-
-  it "of GET /tweets/search/:keyword" do
-    expect(:get => "/tweets/search/:keyword").to route_to(:controller => "tweets", :action => "search", :keyword => ":keyword")
-  end
 end
