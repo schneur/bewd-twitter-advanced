@@ -21,8 +21,10 @@ RSpec.describe Tweet, type: :model do
     end
 
     it 'can have an image' do
+      extend ActionDispatch::TestProcess
+
       user = FactoryBot.create(:user)
-      tweet = FactoryBot.create(:tweet, user: user, message: 'ok', image: fixture_file_upload('files/test.png'))
+      tweet = FactoryBot.create(:tweet, user: user, message: 'ok', image: fixture_file_upload('test.png'))
 
       expect(tweet.reload.image.attached?).to eq(true)
     end

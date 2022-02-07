@@ -34,7 +34,7 @@ RSpec.describe TweetsController, type: :controller do
       post :create, params: {
         tweet: {
           message: 'Test Message',
-          image: fixture_file_upload('files/test.png')
+          image: fixture_file_upload('test.png')
         }
       }
 
@@ -120,8 +120,8 @@ RSpec.describe TweetsController, type: :controller do
       user_1 = FactoryBot.create(:user, username: 'user_1', email: 'user_1@user.com')
       user_2 = FactoryBot.create(:user, username: 'user_2', email: 'user_2@user.com')
 
-      tweet_1 = FactoryBot.create(:tweet, user: user_1, image: fixture_file_upload('files/test.png'))
-      tweet_2 = FactoryBot.create(:tweet, user: user_2, image: fixture_file_upload('files/test.png'))
+      tweet_1 = FactoryBot.create(:tweet, user: user_1, image: fixture_file_upload('test.png'))
+      tweet_2 = FactoryBot.create(:tweet, user: user_2, image: fixture_file_upload('test.png'))
 
       get :index_by_user, params: { username: user_1.username }
 
