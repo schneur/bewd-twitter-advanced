@@ -3,21 +3,21 @@ require 'rails_helper'
 RSpec.describe Tweet, type: :model do
   describe '.create' do
     it 'must belong to a user' do
-      expect do
+      expect {
         Tweet.create!(message: 'test')
-      end.to raise_error(ActiveRecord::RecordInvalid)
+      }.to raise_error(ActiveRecord::RecordInvalid)
     end
 
     it 'must have the presence of message' do
-      expect do
+      expect {
         FactoryBot.create(:tweet, message: nil)
-      end.to raise_error(ActiveRecord::RecordInvalid)
+      }.to raise_error(ActiveRecord::RecordInvalid)
     end
 
     it 'must have a message with max. 140 characters' do
-      expect do
+      expect {
         FactoryBot.create(:tweet, message: 'c' * 141)
-      end.to raise_error(ActiveRecord::RecordInvalid)
+      }.to raise_error(ActiveRecord::RecordInvalid)
     end
 
     it 'can have an image' do
