@@ -49,9 +49,9 @@ group :development, :test do
   # Added by Altcademy.com
   gem 'awesome_print', '~> 1.9'
   gem 'dotenv-rails', '~> 2.7.6'
-  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'factory_bot_rails', '~> 6.2'
   gem 'pry-rails', '>= 0.3.9'
-  gem 'rspec-rails', '~> 4.0'
+  gem 'rspec-rails', '~> 5.1'
 end
 
 group :development do
@@ -68,5 +68,5 @@ end
 
 group :production do
   # Use pg as the database for Active Record
-  gem 'pg', '~> 1.3.1'
+  # gem 'pg', '~> 1.3.1'
 end
