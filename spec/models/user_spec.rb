@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe '.create' do
+  context '.create' do
     it 'should have many sessions' do
       user = FactoryBot.create(:user)
       expect(user.sessions).to eq([])

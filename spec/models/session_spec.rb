@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Session, type: :model do
-  describe '.create' do
+  context '.create' do
     it 'must belong to a user' do
       expect {
         Session.create!

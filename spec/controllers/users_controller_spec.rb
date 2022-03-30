@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   render_views
 
-  describe 'POST /users' do
+  context 'POST /users' do
     it 'renders new user object' do
       post :create, params: {
         user: {
